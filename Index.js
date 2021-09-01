@@ -23,12 +23,12 @@
 // so that Git will track this folder and include it when you push up to your application's repository.
 
 // Created variables
-const manager = require("../Manager");
+const manager = require("./Lib/Manager");
 const engineer = require("./Lib/Engineer");
-const intern = require("../Intern");
+const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { inherits } = require("util");
+// const generateTheHTML = require(./generateTheHTML")
 
 // Structor for employee roles
 // Type of employees are: Manager, Engineer, and Intern.
@@ -108,6 +108,29 @@ const internQuestions = [
   },
 ];
 
+// Need a prompt for questions of employees
+
+//Need a function to add employees then exit when finished
+
+// Need a function for Manager
+
+// Need a function for Engineer
+
+// Need a function for Intern
+
+// This is referance code I wrote to better organize my thoughts
+function init() {
+  // present the user with questions
+  inquirer.prompt(questions).then((data) => {
+    fs.writeFile("READMEGEN.md", generateMarkdown(data), (err) => {
+      err
+        ? console.log(err)
+        : console.log("You have made a READMEGEN.md file successfully!");
+    });
+  });
+}
+
+// This is referance code I wrote to better organize my thoughts
 inquirer.prompt(managerQuestions).then((response) => {
   const manager = new manager(
     response.name,
