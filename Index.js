@@ -23,9 +23,9 @@
 // so that Git will track this folder and include it when you push up to your application's repository.
 
 // Created variables
-const manager = require("./manager");
-const engineer = require("./engineer");
-const intern = require("./intern");
+const manager = require("../Manager");
+const engineer = require("./Lib/Engineer");
+const intern = require("../Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const { inherits } = require("util");
