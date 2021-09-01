@@ -8,10 +8,7 @@
 // When clicked on email it populates to the feild of the email address
 // When github user name is clicked it opens profile
 // Displays a nicely formatted team roster based on user input
-
-// Manager and employee = has officeNumber and getRole(),
-// Employee = has github, getGithub(),
-// Intern will have school, getSchool()
+// Make the array return a valid input (if/else)
 
 // Structor for employee roles
 // type of employees are: Manager, Engineer, Intern, and Employee.
@@ -28,6 +25,7 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+
 // const generateTheHTML = require(./generateTheHTML")
 
 // Structor for employee roles
@@ -36,6 +34,7 @@ const fs = require("fs");
 // Engineer asks for name, employee ID, Email, and Github Username
 // Intern asks for name, ID email, and school
 
+const Array = [];
 // Created strings for input for each type of employee -- Manager Questions/ Requirements for assign.
 const managerQuestions = [
   {
@@ -45,8 +44,8 @@ const managerQuestions = [
   },
   {
     type: "input",
-    name: "Please enter the Manager's ID.",
-    message: "id",
+    name: "id",
+    message: "Please enter the Manager's ID.",
   },
   {
     type: "input",
@@ -79,7 +78,7 @@ const engineerQuestions = [
   },
   {
     type: "input",
-    name: "Office Number",
+    name: "Github",
     message: "Please enter the Engineer's Github UserName.",
   },
 ];
@@ -109,36 +108,76 @@ const internQuestions = [
 ];
 
 // Need a prompt for questions of employees
+const employeeQuestions = [
+  {
+    type: "list",
+    name: "employeeSelection",
+    message: "Which employee would you like to enter?",
+    choices: [
+      "Manager",
+      "Engineer",
+      "Intern",
+      "I have added all the team members I need",
+    ],
+  },
+];
 
 //Need a function to add employees then exit when finished
 
 // Need a function for Manager
+function manager() {
+  inquirer.prompt(managerQuestions).then((response) => {
+    const manager = new manager(
+      response.name,
+      reponse.id,
+      reponse.email,
+      reponse.officeNumber
+    );
+    Array.push(manager);
+  });
+}
 
 // Need a function for Engineer
 
-// Need a function for Intern
+function engineer() {
+  inquirer.prompt(engineerQuestions).then((response) => {
+    const engineer = new engineer(
+      response.name,
+      reponse.id,
+      reponse.email,
+      reponse.Github
+    );
+    Array.push(engineer);
+  });
+}
 
-// This is referance code I wrote to better organize my thoughts
-function init() {
-  // present the user with questions
-  inquirer.prompt(questions).then((data) => {
-    fs.writeFile("READMEGEN.md", generateMarkdown(data), (err) => {
-      err
-        ? console.log(err)
-        : console.log("You have made a READMEGEN.md file successfully!");
-    });
+// Need a function for Intern
+function intern() {
+  inquirer.prompt(internQuestions).then((response) => {
+    const intern = new intern(
+      response.name,
+      reponse.id,
+      reponse.email,
+      reponse.school
+    );
+    Array.push(intern);
   });
 }
 
 // This is referance code I wrote to better organize my thoughts
-inquirer.prompt(managerQuestions).then((response) => {
-  const manager = new manager(
-    response.name,
-    reponse.id,
-    reponse.email,
-    reponse.officeNumber
-  );
-  Array.push(manager);
-});
+// function init() {
+//   // present the user with questions
+//   inquirer.prompt(questions).then((data) => {
+//     fs.writeFile("READMEGEN.md", generateMarkdown(data), (err) => {
+//       err
+//         ? console.log(err)
+//         : console.log("You have made a READMEGEN.md file successfully!");
+//     });
+//   });
+// }
+
+// Create the employees
+
+// Generate HTML
 
 // init();
