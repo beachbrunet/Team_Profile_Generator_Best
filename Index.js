@@ -13,62 +13,109 @@
 // Employee = has github, getGithub(),
 // Intern will have school, getSchool()
 
+// Structor for employee roles
+// type of employees are: Manager, Engineer, Intern, and Employee.
+// Manager asks for name, employee ID, Email address, and office number
+// Engineer asks for name, employee ID, Email, and Github Username
+// Intern asks for name, ID email, and school
 
 // Important: Make sure that you remove dist from the .gitignore file
 // so that Git will track this folder and include it when you push up to your application's repository.
 
-
-
 // Created variables
-const manager
-const engineer
-const intern
-const inquirer = require('inquirer')
+const manager = require("./manager");
+const engineer = require("./engineer");
+const intern = require("./intern");
+const inquirer = require("inquirer");
+const fs = require("fs");
+const { inherits } = require("util");
 
-// Created string for input
-const employeQuestions = [
-    {
-      //   title
-      type: "input",
-      message: "Whats the name of your manager?",
-      name: "manager",
-    },
-    {
-      type: "input",
-      message: "",
-      name: "",
-    },
-    {
-      type: "list",
-      name: "license",
-      message: "What license do you want to use?",
-      choices: ["Apache 2.0 Licene", "MIT", "ILP"],
-    },
-    {
-      type: "input",
-      name: "",
-      message: "",
-    },
-    {
-      type: "input",
-      name: "",
-      message: "",
-    },
-    {
-      type: "input",
-      name: "installation",
-      message: "What commands should be run for dependencies?",
-      default: "npm i",
-    },
-    {
-      type: "input",
-      name: "test",
-      message: "What commands should be run for tests?",
-      default: "",
-    },
-    {
-      type: "input",
-      name: "",
-      message: "",
-    },
-  ];
+// Structor for employee roles
+// Type of employees are: Manager, Engineer, and Intern.
+// Manager asks for name, employee ID, Email address, and office number
+// Engineer asks for name, employee ID, Email, and Github Username
+// Intern asks for name, ID email, and school
+
+// Created strings for input for each type of employee -- Manager Questions/ Requirements for assign.
+const managerQuestions = [
+  {
+    type: "input",
+    name: "Manager",
+    message: "Whats the name of your Manager?",
+  },
+  {
+    type: "input",
+    name: "Please enter the Manager's ID.",
+    message: "id",
+  },
+  {
+    type: "input",
+    name: "Email",
+    message: "Please enter the Manager's email.",
+  },
+  {
+    type: "input",
+    name: "Office Number",
+    message: "Please enter the Manager's office number",
+  },
+];
+
+// Engineer asks for name, employee ID, Email, and Github Username
+const engineerQuestions = [
+  {
+    type: "input",
+    name: "Engineer",
+    message: "Whats the name of your Engineer?",
+  },
+  {
+    type: "input",
+    name: "Please enter the Engineer's ID.",
+    message: "id",
+  },
+  {
+    type: "input",
+    name: "Email",
+    message: "Please enter the Engineer's email.",
+  },
+  {
+    type: "input",
+    name: "Office Number",
+    message: "Please enter the Engineer's Github UserName.",
+  },
+];
+
+// Intern asks for name, ID email, and school
+const internQuestions = [
+  {
+    type: "input",
+    name: "Intern",
+    message: "Whats the name of your Intern?",
+  },
+  {
+    type: "input",
+    name: "Please enter the Intern's ID.",
+    message: "id",
+  },
+  {
+    type: "input",
+    name: "Email",
+    message: "Please enter the Intern's email.",
+  },
+  {
+    type: "input",
+    name: "Office Number",
+    message: "Please enter the Intern's school.",
+  },
+];
+
+inquirer.prompt(managerQuestions).then((response) => {
+  const manager = new manager(
+    response.name,
+    reponse.id,
+    reponse.email,
+    reponse.officeNumber
+  );
+  Array.push(manager);
+});
+
+// init();
