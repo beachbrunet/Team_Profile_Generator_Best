@@ -1,12 +1,18 @@
-const employee = require("./employee.js");
+const employee = require("./Employee.js");
 
-class engineer {
-  constructor(name, id, email, employee) {
+class Engineer {
+  constructor(name, id, email, Github) {
     this.name = name;
     this.id = id;
     this.email = email;
-    this.employee = employee;
+    this.Github = Github;
+  }
+  getGithub() {
+    return this.email;
+  }
+  getRole() {
+    return this.role;
   }
 }
 // needs github
-modeule.exports = engineer;
+modeule.exports = Engineer;
