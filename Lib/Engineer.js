@@ -3,7 +3,7 @@
 // getGithub()
 // getRole()—overridden to return 'Engineer'
 
-const Engineer = require("./Employee.js");
+const Employee = require("./Employee.js");
 // Super?
 class Engineer {
   constructor(name, id, email, Github) {
