@@ -25,6 +25,7 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateHTML = "#";
 
 // const generateTheHTML = require(./generateTheHTML")
 
@@ -134,6 +135,7 @@ function manager() {
       reponse.officeNumber
     );
     Array.push(manager);
+    getArray();
   });
 }
 
@@ -148,6 +150,7 @@ function engineer() {
       reponse.Github
     );
     Array.push(engineer);
+    getArray();
   });
 }
 
@@ -161,6 +164,7 @@ function intern() {
       reponse.school
     );
     Array.push(intern);
+    getArray();
   });
 }
 
@@ -179,5 +183,8 @@ function intern() {
 // Create the employees
 
 // Generate HTML
+function generateHTML() {
+  fs.writeFileSync(generateHTMLPath, "");
+}
 
 // init();

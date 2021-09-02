@@ -1,3 +1,5 @@
+const { getDiffieHellman } = require("crypto");
+
 class employee {
   constructor(name, id, email, employee) {
     this.name = name;
@@ -6,12 +8,29 @@ class employee {
     this.employee = employee;
   }
 
-  printInfo() {
-    console.log(`name: ${this.name}`);
-    console.log(`id: ${this.id}`);
-    console.log(`email: ${this.email}`);
-    console.log(`employee: ${this.employee}`);
+  getName() {
+    return this.name;
+  }
+  getId() {
+    return this.id;
+  }
+
+  getEmail() {
+    return this.id;
+  }
+
+  getRole() {
+    return this.id;
   }
 }
+
+// // The first class is an Employee parent class with the following properties and methods:
+// name
+// id
+// email
+// getName()
+// getId()
+// getEmail()
+// getRole()—returns 'Employee'
 
 module.exports = employee;
