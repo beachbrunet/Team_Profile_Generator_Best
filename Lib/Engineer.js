@@ -1,5 +1,10 @@
-const employee = require("./Employee.js");
+// In addition to Employee's properties and methods, Engineer will also have the following:
+// github—GitHub username
+// getGithub()
+// getRole()—overridden to return 'Engineer'
 
+const Engineer = require("./Employee.js");
+// Super?
 class Engineer {
   constructor(name, id, email, Github) {
     this.name = name;
@@ -14,5 +19,4 @@ class Engineer {
     return this.role;
   }
 }
-// needs github
 modeule.exports = Engineer;
