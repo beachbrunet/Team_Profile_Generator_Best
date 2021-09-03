@@ -161,22 +161,21 @@ function chooseEmployee() {
         "Intern",
         "I have added all the team members I need",
       ],
-    
     },
   ];
 }
-inquirer.prompt(addEmployeeQuestions).then(answers) => {
-if (answers.choice === 'manager') {
-  manager();
-}
-if (answers.choice === "Engineer") {
-  engineer();
-}
-if (answers.choice === "Intern") {
-  Intern();
-}
+inquirer.prompt(addEmployeeQuestions).then((answers) => {
+  if (answers.choice === "manager") {
+    manager();
+  }
+  if (answers.choice === "Engineer") {
+    engineer();
+  }
+  if (answers.choice === "Intern") {
+    Intern();
+  }
+});
 
-}
 // Generate HTML
 function generateHTML() {
   fs.writeFileSync(generateHTMLPath, "");
