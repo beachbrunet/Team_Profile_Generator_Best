@@ -25,9 +25,7 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHTML = "#";
-
-// const generateTheHTML = require(./generateTheHTML")
+const generateTheHTML = require("./generateTheHTML");
 
 // Structor for employee roles
 // Type of employees are: Manager, Engineer, and Intern.
@@ -109,7 +107,7 @@ const internQuestions = [
 ];
 
 // Need a function for creating Manager
-function manager() {
+function CreateManager() {
   inquirer.prompt(managerQuestions).then((response) => {
     const manager = new manager(
       response.name,
@@ -123,7 +121,7 @@ function manager() {
 }
 
 // Need a function for creating Engineer
-function engineer() {
+function createEngineer() {
   inquirer.prompt(engineerQuestions).then((response) => {
     const engineer = new engineer(
       response.name,
@@ -137,7 +135,7 @@ function engineer() {
 }
 
 // Need a function for creating Intern
-function intern() {
+function createIntern() {
   inquirer.prompt(internQuestions).then((response) => {
     const intern = new intern(
       response.name,
@@ -166,13 +164,13 @@ function chooseEmployee() {
 }
 inquirer.prompt(addEmployeeQuestions).then((answers) => {
   if (answers.choice === "manager") {
-    manager();
+    createManager();
   }
   if (answers.choice === "Engineer") {
-    engineer();
+    createEngineer();
   }
   if (answers.choice === "Intern") {
-    Intern();
+    createIntern();
   }
 });
 
