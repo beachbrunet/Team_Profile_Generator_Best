@@ -176,7 +176,13 @@ inquirer.prompt(addEmployeeQuestions).then((answers) => {
 
 // Generate HTML
 function generateHTML() {
-  fs.writeFileSync(generateHTMLPath, "");
+  inquirer.prompt(questions).then((data) => {
+    fs.writeFileSync("TEAM", generateHTML(data), (err) => {
+      err
+        ? console.log(err)
+        : console.log("You have made a Team.md file successfully!");
+    });
+  });
 }
 
 // init();
