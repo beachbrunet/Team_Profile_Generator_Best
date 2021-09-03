@@ -108,24 +108,7 @@ const internQuestions = [
   },
 ];
 
-// Need a prompt for questions of employees
-const employeeQuestions = [
-  {
-    type: "list",
-    name: "employeeSelection",
-    message: "Which employee would you like to enter?",
-    choices: [
-      "Manager",
-      "Engineer",
-      "Intern",
-      "I have added all the team members I need",
-    ],
-  },
-];
-
-//Need a function to add employees then exit when finished
-
-// Need a function for Manager
+// Need a function for creating Manager
 function manager() {
   inquirer.prompt(managerQuestions).then((response) => {
     const manager = new manager(
@@ -139,8 +122,7 @@ function manager() {
   });
 }
 
-// Need a function for Engineer
-
+// Need a function for creating Engineer
 function engineer() {
   inquirer.prompt(engineerQuestions).then((response) => {
     const engineer = new engineer(
@@ -154,7 +136,7 @@ function engineer() {
   });
 }
 
-// Need a function for Intern
+// Need a function for creating Intern
 function intern() {
   inquirer.prompt(internQuestions).then((response) => {
     const intern = new intern(
@@ -167,21 +149,34 @@ function intern() {
     getArray();
   });
 }
+function chooseEmployee() {
+  const addEmployeeQuestions = [
+    {
+      type: "list",
+      name: "employeeSelection",
+      message: "Which employee would you like to enter?",
+      choices: [
+        "Manager",
+        "Engineer",
+        "Intern",
+        "I have added all the team members I need",
+      ],
+    
+    },
+  ];
+}
+inquirer.prompt(addEmployeeQuestions).then(answers) => {
+if (answers.choice === 'manager') {
+  manager();
+}
+if (answers.choice === "Engineer") {
+  engineer();
+}
+if (answers.choice === "Intern") {
+  Intern();
+}
 
-// This is referance code I wrote to better organize my thoughts
-// function init() {
-//   // present the user with questions
-//   inquirer.prompt(questions).then((data) => {
-//     fs.writeFile("READMEGEN.md", generateMarkdown(data), (err) => {
-//       err
-//         ? console.log(err)
-//         : console.log("You have made a READMEGEN.md file successfully!");
-//     });
-//   });
-// }
-
-// Create the employees
-
+}
 // Generate HTML
 function generateHTML() {
   fs.writeFileSync(generateHTMLPath, "");
