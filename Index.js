@@ -25,7 +25,8 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateTheHTML = require("./generateTheHTML");
+// const generateTheHTML = require("./generateTheHTML");
+// const { createCipher } = require("crypto");
 
 // Structor for employee roles
 // Type of employees are: Manager, Engineer, and Intern.
@@ -147,6 +148,7 @@ function createIntern() {
     getArray();
   });
 }
+// Choosing which employee to hire/enter
 function chooseEmployee() {
   const addEmployeeQuestions = [
     {
@@ -161,28 +163,28 @@ function chooseEmployee() {
       ],
     },
   ];
+  inquirer.prompt(addEmployeeQuestions).then((answers) => {
+    if (answers.choice === "manager") {
+      createManager();
+    }
+    if (answers.choice === "Engineer") {
+      createEngineer();
+    }
+    if (answers.choice === "Intern") {
+      createIntern();
+    }
+  });
 }
-inquirer.prompt(addEmployeeQuestions).then((answers) => {
-  if (answers.choice === "manager") {
-    createManager();
-  }
-  if (answers.choice === "Engineer") {
-    createEngineer();
-  }
-  if (answers.choice === "Intern") {
-    createIntern();
-  }
-});
 
 // Generate HTML
-function generateHTML() {
-  inquirer.prompt(questions).then((data) => {
-    fs.writeFileSync("TEAM", generateHTML(data), (err) => {
-      err
-        ? console.log(err)
-        : console.log("You have made a Team.md file successfully!");
-    });
-  });
+function createHTML() {
+  const html = render(Array);
+  fs.writeFileSync(outputpath, html);
+  try {
+    error;
+    console.log(error);
+  } finally {
+  }
 }
 
 // init();

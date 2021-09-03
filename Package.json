@@ -4,27 +4,27 @@
     "description": "",
     "main": "index.js",
     "directories": {
-      "lib": "lib"
+        "lib": "lib"
     },
     "scripts": {
-      "test": "jest",
-      "start": "node index.js"
+        "test": "jest",
+        "start": "node index.js"
     },
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/Friel2021/Team-Profile-Generator.git"
+        "type": "git",
+        "url": "git+https://github.com/Friel2021/Team-Profile-Generator.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/Friel2021/Team-Profile-Generator/issues"
+        "url": "https://github.com/Friel2021/Team-Profile-Generator/issues"
     },
     "homepage": "https://github.com/Friel2021/Team-Profile-Generator#readme",
     "devDependencies": {
-      "jest": "^27.0.6"
+        "jest": "^27.0.6"
     },
     "dependencies": {
-      "inquirer": "^8.1.2",
-      "validator": "^13.6.0"
+        "inquirer": "^8.1.2",
+        "validator": "^13.6.0"
     }
-  }
+}
