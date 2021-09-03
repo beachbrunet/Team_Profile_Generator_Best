@@ -5,18 +5,16 @@
 
 const Employee = require("./Employee.js");
 // Super?
-class Engineer {
+class Engineer extends Employee {
   constructor(name, id, email, Github) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
+    super(name, id, email);
     this.Github = Github;
   }
   getGithub() {
     return this.email;
   }
   getRole() {
-    return this.role;
+    return "engineer";
   }
 }
 modeule.exports = Engineer;

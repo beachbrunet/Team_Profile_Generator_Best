@@ -5,19 +5,16 @@
 // getRole()—overridden to return 'Intern'
 const Employee = require("./employee.js");
 // Super?
-class Intern {
+class Intern extends Employee {
   constructor(name, id, email, school) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
+    super(name, id, email);
     this.school = school;
-  }
-
-  getRole() {
-    return this.role;
   }
   getSchool() {
     return this.school;
+  }
+  getRole() {
+    return "Intern";
   }
 }
 modeule.exports = Intern;

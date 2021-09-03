@@ -4,18 +4,16 @@
 
 const Employee = require("./Employee.js");
 // Super?
-class Manager {
-  constructor(name, id, email, officeNumber) {
-    this.name = name;
-    this.id = id;
-    this.email = email;
+class Manager extends Employee {
+  constructor(name, id, email, school) {
+    super(name, id, email);
     this.officeNumber = officeNumber;
-  }
-  getRole() {
-    return this.role;
   }
   getOfficeNumber() {
     return this.officeNumber;
+  }
+  getRole() {
+    return "Manager";
   }
 }
 
