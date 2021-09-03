@@ -5,11 +5,10 @@ const employee = require("./employee.js");
 // getName(), getId(), getEmail(), getRole()—returns 'Employee'
 
 class Employee {
-  constructor(name, id, email, employee) {
+  constructor(name, id, email) {
     this.name = name;
     this.id = id;
     this.email = email;
-    this.employee = employee;
   }
   getName() {
     return this.name;
@@ -20,11 +19,8 @@ class Employee {
   getEmail() {
     return this.email;
   }
-  // getGithub() {
-  //   return this.Github;
-  // }
   getRole() {
-    return this.role;
+    throw "NOT IMPLEMENTED";
   }
 }
 
