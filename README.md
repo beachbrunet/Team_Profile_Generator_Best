@@ -56,6 +56,7 @@ THEN I exit the application, and the HTML is generated
 [w3School](https://www.w3schools.com/bootstrap4/bootstrap_grid_stacked_to_horizontal.asp)
 
 [Jest](https://www.npmjs.com/package/jest)
+
 [inquirer.js](https://www.npmjs.com/package/inquirer)
 
 ## Contributions and Contact Information
