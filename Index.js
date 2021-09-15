@@ -25,8 +25,9 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const generateTheHTML = require("./generateTheHTML");
-// const { createCipher } = require("crypto");
+
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "display.html");
 
 // Structor for employee roles
 // Type of employees are: Manager, Engineer, and Intern.
@@ -164,7 +165,7 @@ function chooseEmployee() {
     },
   ];
   inquirer.prompt(addEmployeeQuestions).then((answers) => {
-    if (answers.choice === "manager") {
+    if (answers.choice === "Manager") {
       createManager();
     }
     if (answers.choice === "Engineer") {
@@ -173,18 +174,21 @@ function chooseEmployee() {
     if (answers.choice === "Intern") {
       createIntern();
     }
+    if (answers.choice === "I have added all the team members I need") {
+      createHTMLFile();
+    }
   });
 }
 
 // Generate HTML
-// function createHTML() {
-//   const html = render(Array);
-//   fs.writeFileSync(outputpath, html);
-//   try {
-//     error;
-//     console.log(error);
-//   } finally {
-//   }
-// }
+function createHTML() {
+  const html = render(Array);
+  fs.writeFileSync(outputpath, html);
+  try {
+    error;
+    console.log(error);
+  } finally {
+  }
+}
 
 // init();
