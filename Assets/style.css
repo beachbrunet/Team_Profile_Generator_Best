@@ -1,12 +1,11 @@
 :root {
   --light-color: rgb(245, 229, 215);
   --dark-color: rgb(70, 70, 70);
-  --font: "PT Serif", serif;
+  --main-font: "PT Serif", serif;
 }
 
 body {
   background-image: url("https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80");
-  background-color: #cccccc;
 }
 
 h1 {
@@ -17,5 +16,16 @@ h1 {
 }
 
 h3 {
-  font: var(--font);
+  color: var(--light-color);
+  text-shadow: 1px 3px var(--dark-color);
+}
+
+h3,
+h5 {
+  font-family: var(--main-font);
+}
+
+h5 {
+  color: var(--dark-color);
+  text-shadow: 1px 1px var(--light-color);
 }

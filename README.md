@@ -45,19 +45,19 @@ THEN I exit the application, and the HTML is generated
 
 <!-- ----------------------- -->
 
+[BootStrap](https://getbootstrap.com/)
+
+[inquirer.js](https://www.npmjs.com/package/inquirer)
+
+[Jest](https://www.npmjs.com/package/jest)
+
 ## References
 
 <!-- ----------------------- -->
 
-[References used](https://www.elated.com/res/File/articles/development/javascript/jquery/elegant-sliding-image-gallery-with-jquery/)
-
-[BootStrap](https://getbootstrap.com/)
-
 [w3School](https://www.w3schools.com/bootstrap4/bootstrap_grid_stacked_to_horizontal.asp)
 
-[Jest](https://www.npmjs.com/package/jest)
-
-[inquirer.js](https://www.npmjs.com/package/inquirer)
+[Unsplash](https://unsplash.com/photos/szrJ3wjzOMg)
 
 ## Contributions and Contact Information
 
