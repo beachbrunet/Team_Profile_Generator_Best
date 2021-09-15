@@ -8,10 +8,12 @@ body {
   background-image: url("https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1600&q=80");
 }
 
-h1 {
+header {
   color: var(--light-color);
   font: var(--font);
   font-size: 80px;
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.583);
   text-shadow: 4px 4px var(--dark-color);
 }
 
@@ -19,6 +21,11 @@ h3 {
   color: var(--light-color);
   text-shadow: 1px 3px var(--dark-color);
 }
+
+/* not needed to work but if I have time */
+/* main {
+  padding-bottom: 200px;
+} */
 
 h3,
 h5 {
