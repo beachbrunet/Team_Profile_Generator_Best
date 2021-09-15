@@ -190,5 +190,10 @@ function createHTML() {
   } finally {
   }
 }
+// would it be easier to const createHTML = () => {
+//   fs.writeFileSync(outputPath, render(employees), "utf-8");
+// };
+
+// add employee
 
 // init();
