@@ -177,14 +177,14 @@ function chooseEmployee() {
 }
 
 // Generate HTML
-function createHTML() {
-  const html = render(Array);
-  fs.writeFileSync(outputpath, html);
-  try {
-    error;
-    console.log(error);
-  } finally {
-  }
-}
+// function createHTML() {
+//   const html = render(Array);
+//   fs.writeFileSync(outputpath, html);
+//   try {
+//     error;
+//     console.log(error);
+//   } finally {
+//   }
+// }
 
 // init();
