@@ -110,7 +110,7 @@ const internQuestions = [
 
 // Need a function for creating Manager
 function createManager() {
-  inquirer.prompt(managerQuestions).then((response) => {
+  return inquirer.prompt(managerQuestions).then((response) => {
     const manager = new Manager(
       response.name,
       response.id,
@@ -123,7 +123,7 @@ function createManager() {
 
 // Need a function for creating Engineer
 function createEngineer() {
-  inquirer.prompt(engineerQuestions).then((response) => {
+  return inquirer.prompt(engineerQuestions).then((response) => {
     const engineer = new Engineer(
       response.name,
       response.id,
@@ -136,7 +136,7 @@ function createEngineer() {
 
 // Need a function for creating Intern
 function createIntern() {
-  inquirer.prompt(internQuestions).then((response) => {
+  return inquirer.prompt(internQuestions).then((response) => {
     const intern = new Intern(
       response.name,
       response.id,
@@ -163,25 +163,22 @@ function chooseEmployee() {
   ];
   return inquirer.prompt(addEmployeeQuestions).then((answers) => {
     if (answers.choice === "Manager") {
-      createManager();
+      return createManager();
     }
     if (answers.choice === "Engineer") {
-      createEngineer();
+      return createEngineer();
     }
     if (answers.choice === "Intern") {
-      createIntern();
+      return createIntern();
     }
-    if (answers.choice === "I have added all the team members I need") {
-      return true;
-    }
-    return false;
+    return true;
   });
 }
 
 // loops
 function buildTeam() {
   chooseEmployee().then((done) => {
-    if (done) {
+    if (done === true) {
       createHTML();
     } else {
       buildTeam();
