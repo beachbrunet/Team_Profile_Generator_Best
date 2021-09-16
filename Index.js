@@ -20,6 +20,7 @@
 // so that Git will track this folder and include it when you push up to your application's repository.
 
 // Created variables
+// libraries and paths
 const Manager = require("./Lib/Manager");
 const Engineer = require("./Lib/Engineer");
 const Intern = require("./Lib/Intern");
@@ -70,8 +71,8 @@ const engineerQuestions = [
   },
   {
     type: "input",
-    name: "Please enter the Engineer's ID.",
-    message: "id",
+    name: "id",
+    message: "Please enter the Engineer's ID.",
   },
   {
     type: "input",
@@ -94,8 +95,8 @@ const internQuestions = [
   },
   {
     type: "input",
-    name: "Please enter the Intern's ID.",
-    message: "id",
+    name: "id",
+    message: "Please enter the Intern's ID.",
   },
   {
     type: "input",
@@ -187,7 +188,7 @@ function buildTeam() {
   });
 }
 
-// Generate HTML
+// Generate HTML Error: no render defined
 function createHTML() {
   const html = render.teamArray;
   fs.writeFileSync(outputpath, html);
@@ -198,7 +199,7 @@ function createHTML() {
   }
 }
 
-const generateHTML = () => {
+const generateHTML = (generateHTML) => {
   fs.writeFileSync(outputPath, render(teamArray), "utf-8");
 };
 
