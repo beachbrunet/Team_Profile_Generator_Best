@@ -2,7 +2,7 @@
   "name": "team_profile_generator_best",
   "version": "1.0.0",
   "description": "Team gen",
-  "main": "Index.js",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
@@ -252,7 +252,7 @@
     "yargs-parser": "^20.2.9"
   },
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "start": "node index.js"
   },
   "repository": {

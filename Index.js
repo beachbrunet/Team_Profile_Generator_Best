@@ -25,10 +25,10 @@ const engineer = require("./Lib/Engineer");
 const intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
+const path = require("path");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "display.html");
-
 // Structor for employee roles
 // Type of employees are: Manager, Engineer, and Intern.
 // Manager asks for name, employee ID, Email address, and office number
@@ -109,7 +109,7 @@ const internQuestions = [
 ];
 
 // Need a function for creating Manager
-function CreateManager() {
+function createManager() {
   inquirer.prompt(managerQuestions).then((response) => {
     const manager = new manager(
       response.name,
