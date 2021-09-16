@@ -20,9 +20,9 @@
 // so that Git will track this folder and include it when you push up to your application's repository.
 
 // Created variables
-const manager = require("./Lib/Manager");
-const engineer = require("./Lib/Engineer");
-const intern = require("./Lib/Intern");
+const Manager = require("./Lib/Manager");
+const Engineer = require("./Lib/Engineer");
+const Intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
@@ -35,7 +35,7 @@ const outputPath = path.join(OUTPUT_DIR, "display.html");
 // Engineer asks for name, employee ID, Email, and Github Username
 // Intern asks for name, ID email, and school
 
-const Array = [];
+const teamArray = [];
 // Created strings for input for each type of employee -- Manager Questions/ Requirements for assign.
 const managerQuestions = [
   {
@@ -111,42 +111,39 @@ const internQuestions = [
 // Need a function for creating Manager
 function createManager() {
   inquirer.prompt(managerQuestions).then((response) => {
-    const manager = new manager(
+    const manager = new Manager(
       response.name,
-      reponse.id,
-      reponse.email,
-      reponse.officeNumber
+      response.id,
+      response.email,
+      response.officeNumber
     );
-    Array.push(manager);
-    getArray();
+    teamArray.push(manager);
   });
 }
 
 // Need a function for creating Engineer
 function createEngineer() {
   inquirer.prompt(engineerQuestions).then((response) => {
-    const engineer = new engineer(
+    const engineer = new Engineer(
       response.name,
-      reponse.id,
-      reponse.email,
-      reponse.Github
+      response.id,
+      response.email,
+      response.Github
     );
-    Array.push(engineer);
-    getArray();
+    teamArray.push(engineer);
   });
 }
 
 // Need a function for creating Intern
 function createIntern() {
   inquirer.prompt(internQuestions).then((response) => {
-    const intern = new intern(
+    const intern = new Intern(
       response.name,
-      reponse.id,
-      reponse.email,
-      reponse.school
+      response.id,
+      response.email,
+      response.school
     );
-    Array.push(intern);
-    getArray();
+    teamArray.push(intern);
   });
 }
 // Choosing which employee to hire/enter
@@ -154,7 +151,7 @@ function chooseEmployee() {
   const addEmployeeQuestions = [
     {
       type: "list",
-      name: "employeeSelection",
+      name: "choice",
       message: "Which employee would you like to enter?",
       choices: [
         "Manager",
@@ -164,7 +161,7 @@ function chooseEmployee() {
       ],
     },
   ];
-  inquirer.prompt(addEmployeeQuestions).then((answers) => {
+  return inquirer.prompt(addEmployeeQuestions).then((answers) => {
     if (answers.choice === "Manager") {
       createManager();
     }
@@ -174,15 +171,27 @@ function chooseEmployee() {
     if (answers.choice === "Intern") {
       createIntern();
     }
-    if (answers.choice === "I have added all the team members I need") {
-      createHTMLFile();
-    }
-  });
-}
+//     if (answers.choice === "I have added all the team members I need") {
+//       return true;
+//     }
+//     return false;
+//   });
+// }
+
+// // loops
+// function buildTeam() {
+//   chooseEmployee().then((done) => {
+//     if (done) {
+//       createHTML();
+//     } else {
+//       buildTeam();
+//     }
+//   });
+// }
 
 // Generate HTML
 function createHTML() {
-  const html = render(Array);
+  const html = render(teamArray);
   fs.writeFileSync(outputpath, html);
   try {
     error;
@@ -190,10 +199,5 @@ function createHTML() {
   } finally {
   }
 }
-// would it be easier to const createHTML = () => {
-//   fs.writeFileSync(outputPath, render(employees), "utf-8");
-// };
 
-// add employee
-
-// init();
+buildTeam();
