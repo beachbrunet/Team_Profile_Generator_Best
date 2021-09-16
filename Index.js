@@ -171,23 +171,23 @@ function chooseEmployee() {
     if (answers.choice === "Intern") {
       createIntern();
     }
-//     if (answers.choice === "I have added all the team members I need") {
-//       return true;
-//     }
-//     return false;
-//   });
-// }
+    if (answers.choice === "I have added all the team members I need") {
+      return true;
+    }
+    return false;
+  });
+}
 
-// // loops
-// function buildTeam() {
-//   chooseEmployee().then((done) => {
-//     if (done) {
-//       createHTML();
-//     } else {
-//       buildTeam();
-//     }
-//   });
-// }
+// loops
+function buildTeam() {
+  chooseEmployee().then((done) => {
+    if (done) {
+      createHTML();
+    } else {
+      buildTeam();
+    }
+  });
+}
 
 // Generate HTML
 function createHTML() {
