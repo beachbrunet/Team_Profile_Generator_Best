@@ -41,10 +41,10 @@ function generateHTML (#) {
          <div class="card text-white bg-info mb-3 d-flex justify-content-center" style="max-width: 18rem;">
           <h3 class="card-header">Turk</h3>
          <div class="card-body">
-             <h5 class="card-title">${Role engineer}</h5>
-             <li class="list-group-item"> ID: ${ID number}</li>
-            <li class="list-group-item">Email:${email}</li>
-            <li class="list-group-item link link-primary">${github username}</li>
+             <h5 class="card-title">${data.engineerName}</h5>
+             <li class="list-group-item"> ID: ${data.idNumber}</li>
+            <li class="list-group-item">Email:${data.engineerEmail}</li>
+            <li class="list-group-item link link-primary">${data.githubUsername}</li>
           </div>
         </div>
     </div>
@@ -54,19 +54,18 @@ function generateHTML (#) {
              <div class="card text-white bg-info mb-3 d-flex justify-content-center" style="max-width: 18rem;">
               <h3 class="card-header">J.D.</h3>
              <div class="card-body">
-                 <h5 class="card-title">${Role Intern}</h5>
-                 <li class="list-group-item">ID: ${Role manager}</li>
-                <li class="list-group-item">Email: ${email}</li>
-                <li class="list-group-item">School: ${School}</li>
-              </div>
+                 <h5 class="card-title">${data.internName}</h5>
+                 <li class="list-group-item">ID: ${data.idNumber}</li>
+                <li class="list-group-item">Email: ${data.internEmail}</li>
+                <li class="list-group-item">School: ${data.school}</li>
+                </div>
+                </div>
             </div>
-        </div>
-</div>
+         </div>
 
-</main>
-    
-    
-    
+     </main>
+    </body>
+</html>   
     `;
 }
 
