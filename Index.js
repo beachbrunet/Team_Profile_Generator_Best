@@ -26,6 +26,7 @@ const Intern = require("./Lib/Intern");
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
+// const render = require("./lib/htmlRender");
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "display.html");
@@ -188,7 +189,7 @@ function buildTeam() {
 
 // Generate HTML
 function createHTML() {
-  const html = render(teamArray);
+  const html = render.teamArray;
   fs.writeFileSync(outputpath, html);
   try {
     error;
@@ -196,5 +197,9 @@ function createHTML() {
   } finally {
   }
 }
+
+const generateHTML = () => {
+  fs.writeFileSync(outputPath, render(teamArray), "utf-8");
+};
 
 buildTeam();
