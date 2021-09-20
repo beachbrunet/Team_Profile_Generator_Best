@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.2.1"
+  },
+  "name": "team_profile_generator_best",
+  "description": "## Requirements",
+  "version": "1.0.0",
+  "main": "Index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beachbrunet/Team_Profile_Generator_Best.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beachbrunet/Team_Profile_Generator_Best/issues"
+  },
+  "homepage": "https://github.com/beachbrunet/Team_Profile_Generator_Best#readme"
+}
