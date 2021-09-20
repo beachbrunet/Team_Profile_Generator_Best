@@ -19,7 +19,7 @@ test("it will get a name via getName() ", () => {
   expect(e.getName()).toBe("testValue)");
 });
 
-// getId
+// getId()
 test("it will get a name via getId() ", () => {
   const testValue = "100";
   const e = new Employee("blah", testValue);
@@ -34,8 +34,8 @@ test("it will get a name via getName() ", () => {
 });
 
 // getRole
-test("it will get a name via getName() ", () => {
+test("it will return /Employee via getRole()", () => {
   const testValue = "Employee";
   const e = new Employee("Carla", 1, "email@email.com");
-  expect(e.getName()).toBe("testValue)");
+  expect(e.getRole()).toBe("testValue)");
 });
