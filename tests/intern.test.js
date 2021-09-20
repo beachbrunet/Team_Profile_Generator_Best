@@ -4,14 +4,14 @@ const Intern = require("../lib/Intern");
 test("will set school username via constructor", () => {
   const testValue = "UD";
   const e = new Intern("Carla", 1, "email@email.com", testValue);
-  expect(e.school).toBe("testValue)");
+  expect(e.school).toBe(testValue));
 });
 
 // getSchool()-done
 test("will set school username via getSchool()", () => {
   const testValue = "UD";
   const e = new Intern("Carla", 1, "email@email.com", testValue);
-  expect(e.getSchool()).toBe("testValue)");
+  expect(e.getSchool()).toBe(testValue);
 });
 
 // getRole()-done

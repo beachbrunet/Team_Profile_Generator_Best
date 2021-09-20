@@ -2,50 +2,50 @@ const Employee = require("../lib/Employee");
 
 // getName(), getId(), getEmail(), getRole()—returns 'Employee'
 
-// name-done
+// name -checked
 test("Can set name via constructor ", () => {
   const name = "Carla";
   const e = new Employee(name);
   expect(e.name).toBe(name);
 });
 
-// id-done
-test("Can set name via constructor ", () => {
-  const testValue = "001";
+// id-checked
+test("Can set id via constructor ", () => {
+  const testValue = 100;
   const e = new Employee("Foo", testValue);
   expect(e.id).toBe(testValue);
 });
 
-// email
-test("Can set name via constructor ", () => {
-  const name = "Carla";
-  const e = new Employee(name);
-  expect(e.name).toBe(name);
+// email-checked
+test("Can set email via constructor ", () => {
+  const testValue = "email@email.com";
+  const e = new Employee("Foo", 1, testValue);
+  expect(e.email).toBe(testValue);
 });
 
-// getName()-done
-test("it will get a name via getName() ", () => {
+// getName()-checked
+test("Can get name via getName() ", () => {
   const testValue = "Carla";
   const e = new Employee(testValue);
   expect(e.getName()).toBe(testValue);
 });
 
-// getId()-done
-test("it will get a name via getId() ", () => {
-  const testValue = "001";
+// getId()-checked
+test("Can get id via getId()", () => {
+  const testValue = 100;
   const e = new Employee("Foo", testValue);
   expect(e.getId()).toBe(testValue);
 });
 
-// getEmail()-done
-test("it will get email via getEmail() ", () => {
+// getEmail()-checked
+test("Can get id via getEmail() ", () => {
   const testValue = "email@email.com";
   const e = new Employee("Foo", 1, testValue);
   expect(e.getEmail()).toBe(testValue);
 });
 
-// getRole-done
-test("it will return /Employee via getRole()", () => {
+// getRole-checked
+test('getRole() should return "Employee"', () => {
   const testValue = "Employee";
   const e = new Employee("Carla", 1, "email@email.com");
   expect(e.getRole()).toBe(testValue);
