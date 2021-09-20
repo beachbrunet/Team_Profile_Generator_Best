@@ -177,10 +177,22 @@ function chooseEmployee() {
   });
 }
 
+// Generate HTML Error: no render defined
+function createHTML() {
+  try {
+    const html = render.teamArray;
+    // Issue here
+    fs.writeFileSync(outputPath, html);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 // loops
 function buildTeam() {
   chooseEmployee().then((done) => {
     if (done === true) {
+      // issue here
       createHTML();
     } else {
       buildTeam();
@@ -188,19 +200,16 @@ function buildTeam() {
   });
 }
 
-// Generate HTML Error: no render defined
-function createHTML() {
-  const html = render.teamArray;
-  fs.writeFileSync(outputpath, html);
-  try {
-    error;
-    console.log(error);
-  } finally {
-  }
-}
-
-// const generateHTML = (generateHTML) => {
-//   fs.writeFileSync(outputPath, render(teamArray), "utf-8");
-// };
+// backup
+// function createHTML() {
+//   const html = render.teamArray;
+//   // Issue here
+//   fs.writeFileSync(outputPath, html);
+//   try {
+//     error;
+//     console.log(error);
+//   } finally {
+//   }
+// }
 
 buildTeam();
