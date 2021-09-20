@@ -1,6 +1,9 @@
 const Employee = require("../lib/Employee");
 
-// getName(), getId(), getEmail(), getRole()—returns 'Employee'
+test("Can instantiate Employee instance", () => {
+  const e = new Employee();
+  expect(typeof e).toBe("object");
+});
 
 // name -checked
 test("Can set name via constructor ", () => {
@@ -10,21 +13,21 @@ test("Can set name via constructor ", () => {
 });
 
 // id-checked
-test("Can set id via constructor ", () => {
+test("Can set id via constructor", () => {
   const testValue = 100;
   const e = new Employee("Foo", testValue);
   expect(e.id).toBe(testValue);
 });
 
 // email-checked
-test("Can set email via constructor ", () => {
+test("Can set email via constructor", () => {
   const testValue = "email@email.com";
   const e = new Employee("Foo", 1, testValue);
   expect(e.email).toBe(testValue);
 });
 
 // getName()-checked
-test("Can get name via getName() ", () => {
+test("Can get name via getName()", () => {
   const testValue = "Carla";
   const e = new Employee(testValue);
   expect(e.getName()).toBe(testValue);
@@ -38,7 +41,7 @@ test("Can get id via getId()", () => {
 });
 
 // getEmail()-checked
-test("Can get id via getEmail() ", () => {
+test("Can get email via getEmail()", () => {
   const testValue = "email@email.com";
   const e = new Employee("Foo", 1, testValue);
   expect(e.getEmail()).toBe(testValue);

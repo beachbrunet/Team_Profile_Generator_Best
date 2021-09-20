@@ -6,6 +6,7 @@
   "directories": {
     "test": "tests"
   },
+
   "dependencies": {
     "abab": "^2.0.5",
     "acorn": "^8.5.0",
