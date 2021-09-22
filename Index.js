@@ -177,17 +177,6 @@ function chooseEmployee() {
   });
 }
 
-// Generate HTML Error: no render defined
-function createHTML() {
-  try {
-    const html = render.teamArray;
-    // Issue here
-    fs.writeFileSync(outputPath, html);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
 // loops
 function buildTeam() {
   chooseEmployee().then((done) => {
@@ -198,6 +187,16 @@ function buildTeam() {
       buildTeam();
     }
   });
+}
+
+// Generate HTML Error: no render defined
+function createHTML() {
+  try {
+    const html = render(teamArray);
+    fs.writeFileSync(outputPath, html);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // backup
