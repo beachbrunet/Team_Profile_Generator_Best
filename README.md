@@ -39,7 +39,7 @@ THEN I exit the application, and the HTML is generated
 
 <!-- ----------------------- -->
 
-![Screen Shot](https://.png)
+![Screen Shot](./Assets/images/TestPass.png)
 
 ## Recources
 
