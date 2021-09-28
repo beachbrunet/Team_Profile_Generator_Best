@@ -6,12 +6,15 @@
 const Employee = require("./Employee.js");
 // Super?
 class Engineer extends Employee {
-  constructor(name, id, email, Github) {
+  constructor(name, id, email, github) {
     super(name, id, email);
-    this.Github = Github;
+    this.github = github;
   }
   getGithub() {
     return this.email;
+  }
+  getGithub() {
+    return this.github;
   }
   getRole() {
     return "Engineer";
