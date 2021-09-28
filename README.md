@@ -39,6 +39,8 @@ THEN I exit the application, and the HTML is generated
 
 <!-- ----------------------- -->
 
+![Sreen Shot Display](./Assets/images/page.png)
+
 ![Screen Shot](./Assets/images/TestPass.png)
 
 ## Recources
@@ -63,5 +65,7 @@ THEN I exit the application, and the HTML is generated
 
 <!-- ----------------------- -->
 
+```
 Catherine Cox
 ccox.034@gmail.com
+```
