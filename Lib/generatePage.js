@@ -1,5 +1,6 @@
 // create a function html with backtics
 function generateHTML(data) {
+  let content = data.map((employee) => employee.render()).join();
   return `
     <!DOCTYPE html>
 <html lang="en">
@@ -19,50 +20,11 @@ function generateHTML(data) {
 
     <main> 
 <body>
+${content}
 
-    <!-- Manager-->
 
-    <div class="container">     
-        <div class="row">
-            <div class="card-deck">
-             <div class="card text-white bg-info mb-3 d-flex justify-content-center" style="max-width: 18rem;">
-              <h3 class="card-header">Carla</h3>
-             <div class="card-body">
-                 <h5 class="card-title"> ${data.managerName} </h5>
-                 <li class="list-group-item"> ${data.idNumber}</li>
-                <li class="list-group-item">Email: ${data.managerEmail} </li>
-                <li class="list-group-item link"> ${data.mangerOfficeNumber} </li>
-              </div>
-            </div>
-        </div>
 
-<!-- Engineer -->
-        <div class="card-deck">
-         <div class="card text-white bg-info mb-3 d-flex justify-content-center" style="max-width: 18rem;">
-          <h3 class="card-header">Turk</h3>
-         <div class="card-body">
-             <h5 class="card-title">${data.engineerName}</h5>
-             <li class="list-group-item"> ID: ${data.idNumber}</li>
-            <li class="list-group-item">Email:${data.engineerEmail}</li>
-            <li class="list-group-item link link-primary">${data.githubUsername}</li>
-          </div>
-        </div>
-    </div>
 
-    <!-- Intern #1-->
-            <div class="card-deck">
-             <div class="card text-white bg-info mb-3 d-flex justify-content-center" style="max-width: 18rem;">
-              <h3 class="card-header">J.D.</h3>
-             <div class="card-body">
-                 <h5 class="card-title">${data.internName}</h5>
-                 <li class="list-group-item">ID: ${data.idNumber}</li>
-                <li class="list-group-item">Email: ${data.internEmail}</li>
-                <li class="list-group-item">School: ${data.school}</li>
-                </div>
-                </div>
-            </div>
-         </div>
-     </main>
     </body>
 </html>   
     `;

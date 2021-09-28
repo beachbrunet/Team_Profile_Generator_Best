@@ -42,7 +42,7 @@ const teamArray = [];
 const managerQuestions = [
   {
     type: "input",
-    name: "Manager",
+    name: "name",
     message: "Whats the name of your Manager?",
   },
   {
@@ -52,12 +52,12 @@ const managerQuestions = [
   },
   {
     type: "input",
-    name: "Email",
+    name: "email",
     message: "Please enter the Manager's email.",
   },
   {
     type: "input",
-    name: "Office Number",
+    name: "officeNumber",
     message: "Please enter the Manager's office number",
   },
 ];
@@ -66,7 +66,7 @@ const managerQuestions = [
 const engineerQuestions = [
   {
     type: "input",
-    name: "Engineer",
+    name: "name",
     message: "Whats the name of your Engineer?",
   },
   {
@@ -76,12 +76,12 @@ const engineerQuestions = [
   },
   {
     type: "input",
-    name: "Email",
+    name: "email",
     message: "Please enter the Engineer's email.",
   },
   {
     type: "input",
-    name: "Github",
+    name: "github",
     message: "Please enter the Engineer's Github UserName.",
   },
 ];
@@ -90,7 +90,7 @@ const engineerQuestions = [
 const internQuestions = [
   {
     type: "input",
-    name: "Intern",
+    name: "name",
     message: "Whats the name of your Intern?",
   },
   {
@@ -100,12 +100,12 @@ const internQuestions = [
   },
   {
     type: "input",
-    name: "Email",
+    name: "email",
     message: "Please enter the Intern's email.",
   },
   {
     type: "input",
-    name: "Office Number",
+    name: "school",
     message: "Please enter the Intern's school.",
   },
 ];
@@ -130,7 +130,7 @@ function createEngineer() {
       response.name,
       response.id,
       response.email,
-      response.Github
+      response.github
     );
     teamArray.push(engineer);
   });

@@ -22,6 +22,9 @@ class Employee {
   getRole() {
     return "Employee";
   }
+  render() {
+    return "";
+  }
 }
 
 module.exports = Employee;
