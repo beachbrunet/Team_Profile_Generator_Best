@@ -20,7 +20,7 @@ class Employee {
     return this.email;
   }
   getRole() {
-    throw "NOT IMPLEMENTED";
+    return "Employee";
   }
 }
 
