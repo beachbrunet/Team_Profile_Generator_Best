@@ -22,11 +22,6 @@ h3 {
   text-shadow: 1px 3px var(--dark-color);
 }
 
-/* not needed to work but if I have time */
-/* main {
-  padding-bottom: 200px;
-} */
-
 h3,
 h5 {
   font-family: var(--main-font);
